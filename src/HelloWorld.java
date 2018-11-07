@@ -2,11 +2,11 @@ public class HelloWorld {
     public static void main(String[] args){
 //        System.out.print("Hello ");
 //        System.out.print("World");
-        int myFavoriteNumber = 13;
+        byte myFavoriteNumber = 13;
         System.out.println(myFavoriteNumber);
         String myString = "Panthers are the best";
         System.out.println(myString);
-        double myNumber = 3.14;
+        float myNumber = 3.14F;
         System.out.println(myNumber);
 //        int x = 5;
 //        System.out.println(++x);
