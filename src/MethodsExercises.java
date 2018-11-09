@@ -6,7 +6,6 @@ public class MethodsExercises {
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userInput = scanner.nextInt();
 //        System.out.println(userInput = getInteger(1, 10));
-        System.out.println(getInteger(1,10));
     }
     public static int addition(int a, int b){
         return a + b;
@@ -32,12 +31,6 @@ public class MethodsExercises {
         }else{
             return true;
         }
-    }
-    public static int getInteger(int min, int max) {
-        if (max){
-            return max;
-        }
-        return getInteger(min, max - 1);
     }
     public static long factorial(int a) {
         long result = a;
