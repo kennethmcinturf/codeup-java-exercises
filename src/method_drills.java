@@ -51,31 +51,6 @@ public class method_drills {
             }
         } while (!stillGuessing && wrongCounter < 6);
     }
-//    public static String timeConversion(){
-//        String timeConverted;
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Please enter you time");
-//        String time = scanner.nextLine();
-//        System.out.println("Is that time in 12 or 24 hour time?");
-//        String twelveOrTwentyFour = scanner.nextLine();
-//        int i = time.indexOf(':');
-//        timeConverted = time.substring(i + 1);
-//        if (twelveOrTwentyFour.equals("12")){
-//            if (Integer.parseInt(time.substring(0,i)) <= 12){
-//                return time;
-//            }else {
-//                time = ((Integer.parseInt(time)) - 12) + timeConverted;
-//                return time;
-//            }
-//        }else {
-//            if (Integer.parseInt(time.substring(0,i)) >= 12){
-//                return time;
-//            }else {
-//                time = ((Integer.parseInt(time)) + 12) + timeConverted;
-//                return time;
-//            }
-//        }
-//    }
     public static void calculator(){
         boolean nextMath;
         int number = 0;

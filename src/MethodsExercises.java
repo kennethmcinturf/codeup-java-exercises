@@ -7,6 +7,20 @@ public class MethodsExercises {
 //        int userInput = scanner.nextInt();
 //        System.out.println(userInput = getInteger(1, 10));
     }
+    public static int getInteger(int min, int max) {
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) {
+            System.out.println("Not a number!");
+            return getInteger(min, max);
+        }
+        int userInput = sc.nextInt();
+        if (userInput >= min && userInput <= max) {
+            return userInput;
+        } else {
+            System.out.println("Number not in range!");
+            return getInteger(min, max);
+        }
+    }
     public static int addition(int a, int b){
         return a + b;
     }
