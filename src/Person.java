@@ -1,13 +1,8 @@
+import util.Input;
+
 import java.util.Scanner;
 
 public class Person {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a persons name.");
-        String newPerson = scanner.nextLine();
-        Person person = new Person();
-        person.name = newPerson;
-    }
     private String name;
 
     public String getName(){
@@ -18,5 +13,17 @@ public class Person {
     }
     public void sayHello(){
         System.out.printf("%s says hello!", name);
+    }
+
+    public Person(String name){
+        this.name = name;
+        sayHello();
+    }
+
+    public static void main(String[] args) {
+        Input input = new Input();
+        System.out.println("Please Enter the name");
+        String newName = input.getString();
+        Person person = new Person(newName);
     }
 }
