@@ -1,5 +1,6 @@
 import util.Input;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Person {
@@ -17,7 +18,17 @@ public class Person {
 
     public Person(String name){
         this.name = name;
-        sayHello();
+    }
+
+    public static void addPeople(Person[] people, Person person){
+        Person[] peoples = new Person[people.length + 1];
+        for (int i = 0; i < people.length; i++) {
+            peoples[i] = new Person(people[i].getName());
+        }
+        peoples[people.length] = new Person(person.getName());
+        for (Person dude: peoples) {
+            System.out.println(dude.getName());
+        }
     }
 
     public static void main(String[] args) {
