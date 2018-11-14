@@ -57,12 +57,24 @@ public class Input {
     }
 
     public Double getDouble(){
-        return this.sc.nextDouble();
+        if (!this.sc.hasNextDouble()) {
+            System.out.println("Not valid integer. Try again.");
+            this.sc.nextLine();
+            return getDouble();
+        } else {
+            return this.sc.nextDouble();
+        }
     }
 
     public Double getDouble(String prompt){
         System.out.println(prompt);
-        return this.sc.nextDouble();
+        if (!this.sc.hasNextDouble()) {
+            System.out.println("Not valid integer. Try again.");
+            this.sc.nextLine();
+            return getDouble(prompt);
+        } else {
+            return this.sc.nextDouble();
+        }
     }
 
     public Double getDouble(int min, int max){
