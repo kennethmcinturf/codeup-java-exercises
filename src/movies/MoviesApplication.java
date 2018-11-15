@@ -7,8 +7,10 @@ import java.util.Arrays;
 
 public class MoviesApplication {
     public static void main(String[] args) {
+        Movie [] movies = MoviesArray.findAll();
         Input input = new Input();
         boolean exitApp = false;
+        boolean contiuneBrowsing = true;
         do {
             System.out.println("What would you like to do?");
             System.out.println("0 - exit\n" +
@@ -18,33 +20,40 @@ public class MoviesApplication {
                     "4 - view movies in the horror category\n" +
                     "5 - view movies in the scifi category\n" +
                     "6 - add a new movie");
-            Integer userInput = input.getInt(0,5);
+            Integer userInput = input.getInt(0,6);
+            input.getString();
             if (userInput == 1){
-                getAllMovies();
+                getAllMovies(movies);
             }else if(userInput == 2){
-                getAllMoviesByCatagories("animated");
+                getAllMoviesByCatagories("animated", movies);
             }else if(userInput == 3){
-                getAllMoviesByCatagories("drama");
+                getAllMoviesByCatagories("drama", movies);
             }else if(userInput == 4){
-                getAllMoviesByCatagories("horror");
+                getAllMoviesByCatagories("horror", movies);
             }else if(userInput == 5){
-                getAllMoviesByCatagories("scifi");
+                getAllMoviesByCatagories("scifi", movies);
+            }else if(userInput == 6){
+                String newName = input.getString("What is the name of the movie?");
+                String newCatagorie = input.getString("What is the new movie's genre").toLowerCase();
+                Movie movie = new Movie(newName,newCatagorie);
+                movies = addMovie(movies,movie);
             }else {
                 exitApp = true;
             }
-        }while (!exitApp);
+            System.out.println("Press enter to continue");
+            contiuneBrowsing = input.getString().isEmpty();
+            input.getString();
+        }while (!exitApp && contiuneBrowsing);
         System.out.println("Thank you for using the movie app!!");
     }
 
-    public static void getAllMovies(){
-        Movie[] movies = MoviesArray.findAll();
+    public static void getAllMovies(Movie[] movies){
         for (Movie movie : movies) {
             System.out.println(movie.getName());
         }
     }
 
-    public static void getAllMoviesByCatagories(String catagory){
-        Movie[] movies = MoviesArray.findAll();
+    public static void getAllMoviesByCatagories(String catagory, Movie[] movies){
         for (Movie movie : movies) {
             if (movie.getCategory().equals(catagory)){
                 System.out.println(movie.getName() + " - " + movie.getCategory());
