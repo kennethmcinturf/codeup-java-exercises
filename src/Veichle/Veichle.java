@@ -1,4 +1,4 @@
-package Travel;
+package Veichle;
 
 public class Veichle {
     protected int milesPerGallon;
@@ -23,11 +23,11 @@ public class Veichle {
         this.value = value;
     }
 
-    public Veichle() {
-        this.milesPerGallon = 1;
-        this.colorOfVeichle = "white";
-        this.value = 1;
-    }
+//    public Veichle() {
+//        this.milesPerGallon = 1;
+//        this.colorOfVeichle = "white";
+//        this.value = 1;
+//    }
 
     public static void startVeichle(){
         System.out.println("Vroom Vroom!");

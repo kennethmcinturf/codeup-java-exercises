@@ -5,6 +5,13 @@ public class Product {
     protected String description;
     protected int dateWhenAvalible;
 
+    public Product(String description, int price, int dateWhenAvalible) {
+        this.description = description;
+        this.price = price;
+        this.dateWhenAvalible = dateWhenAvalible;
+    }
+
+
     public int getPrice() {
         return price;
     }
@@ -29,11 +36,16 @@ public class Product {
         this.dateWhenAvalible = dateWhenAvalible;
     }
 
-    public static void orderingNewProduct(){
+    public void orderingNewProduct(){
         System.out.println("New Product inbound");
     }
 
     public void changeProductFeature(String feature){
         this.setDescription(feature);
+    }
+
+    public void productOrdered(){
+        orderingNewProduct();
+        System.out.println("Product Here!!");
     }
 }

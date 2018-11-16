@@ -1,4 +1,4 @@
-package Travel;
+package Veichle;
 
 public class Boat extends Veichle{
     protected String colorOfBoat;
