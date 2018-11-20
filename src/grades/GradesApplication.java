@@ -37,6 +37,7 @@ public class GradesApplication {
         boolean continueNames = true;
         Input input = new Input();
         do {
+            System.out.println(students.keySet());
             String studentSearch = input.getString("What student would you like to see more information on? Or enter all to see all grades\nOr full report to see a comprehensive list of grades");
             Student searchedStudent = students.get(studentSearch);
             if (studentSearch.toLowerCase().equals("all")) {
