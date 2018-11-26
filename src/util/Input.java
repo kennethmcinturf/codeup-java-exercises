@@ -29,72 +29,127 @@ public class Input {
     }
 
     public Integer getInt(){
-        return this.sc.nextInt();
+        try {
+            return Integer.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Interger in number format");
+            return getInt();
+        }
     }
 
+
     public Integer getInt(String prompt){
-        System.out.println(prompt);
-        return this.sc.nextInt();
+        try {
+            System.out.println(prompt);
+            return Integer.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Interger in number format");
+            return getInt(prompt);
+        }
     }
 
     public Integer getInt(int min, int max){
-        int number = this.sc.nextInt();
-        if (number > max || number < min){
-            System.out.println("Number not in range, please enter a new number.");
-            getInt(min,max);
+        int number;
+        try {
+            number = Integer.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Interger in number format");
+            return getInt(min,max);
         }
-        return number;
+        if (number <= max && number >= min){
+            return number;
+        }else {
+            System.out.println("Number not in range, please enter a new number.");
+            return getInt(min,max);
+        }
     }
 
     public Integer getInt(int min, int max, String prompt){
         System.out.println(prompt);
-        int number = this.sc.nextInt();
-        if (number > max || number < min){
-            System.out.println("Number not in range, please enter a new number.");
-            getInt(min,max,prompt);
+        int number;
+        try {
+            number = Integer.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Interger in number format");
+            return getInt(min,max);
         }
-        return number;
+        if (number <= max && number >= min){
+            return number;
+        }else {
+            System.out.println("Number not in range, please enter a new number.");
+            return getInt(min,max);
+        }
     }
 
     public Double getDouble(){
-        if (!this.sc.hasNextDouble()) {
-            System.out.println("Not valid integer. Try again.");
-            this.sc.nextLine();
+        try {
+            return Double.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Double in number format");
             return getDouble();
-        } else {
-            return this.sc.nextDouble();
         }
     }
 
     public Double getDouble(String prompt){
         System.out.println(prompt);
-        if (!this.sc.hasNextDouble()) {
-            System.out.println("Not valid integer. Try again.");
-            this.sc.nextLine();
-            return getDouble(prompt);
-        } else {
-            return this.sc.nextDouble();
+        try {
+            return Double.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a Double in number format");
+            return getDouble();
         }
     }
 
     public Double getDouble(int min, int max){
-        double number = this.sc.nextDouble();
-        if (number > max || number < min){
-            System.out.println("Number not in range, please enter a new number.");
-            getInt(min,max);
+        double number;
+        try {
+            number = Double.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a double in number format");
+            return getDouble(min,max);
         }
-        return number;
+        if (number <= max && number >= min){
+            return number;
+        }else {
+            System.out.println("Number not in range, please enter a new number.");
+            return getDouble(min,max);
+        }
     }
 
     public Double getDouble(int min, int max, String prompt){
         System.out.println(prompt);
-        double number = this.sc.nextDouble();
-        if (number > max || number < min){
-            System.out.println("Number not in range, please enter a new number.");
-            getInt(min,max,prompt);
+        double number;
+        try {
+            number = Double.valueOf(this.sc.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a double in number format");
+            return getDouble(min,max);
         }
-        return number;
+        if (number <= max && number >= min){
+            return number;
+        }else {
+            System.out.println("Number not in range, please enter a new number.");
+            return getDouble(min,max);
+        }
     }
 
+    public int getBinary(){
+        try {
+            String binary = this.sc.next();
+            return Integer.parseInt(binary, 2);
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a valid number");
+            return getBinary();
+        }
+    }
 
+    public int getHex(){
+        try {
+            String hex = this.sc.nextLine();
+            return Integer.parseInt(hex, 16);
+        }catch (NumberFormatException e){
+            System.out.println("Please enter a valid number");
+            return getHex();
+        }
+    }
 }
