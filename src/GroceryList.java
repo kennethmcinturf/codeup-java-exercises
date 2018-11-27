@@ -79,7 +79,7 @@ public class GroceryList {
         Collections.sort(keys);
         System.out.println("Here is your list organized:");
         for (int i = 0; i < keys.size(); i++){
-            System.out.printf("%s: %d\n", keys.get(i), groceryList.get(keys.get(i)));
+            System.out.printf("%s: %d", keys.get(i), groceryList.get(keys.get(i)));
         }
     }
 
